@@ -1,7 +1,9 @@
 import { Post }         from "./entities/Post";
+import { User }         from "./entities/User";
 import { __prod__ }     from "./constants";
 import { MikroORM }     from "@mikro-orm/core";
 import path             from "path";
+
 
 export default {
     migrations: {
@@ -9,7 +11,7 @@ export default {
         pattern: /^[\w-]+\d+\.[tj]s$/,
         disableForeignKeys: false,
     },
-    entities: [Post],
+    entities: [Post, User],
     dbName: "claims",
     type: "postgresql",
     debug: !__prod__,
